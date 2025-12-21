@@ -1,5 +1,6 @@
 # build dir
 build/
+build-release/
 cmake-build-*/
 
 # tests

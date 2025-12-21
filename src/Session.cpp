@@ -10,17 +10,18 @@ Session::~Session(){
 void Session::make_response(const Command& cmd){
   if(cmd.type == CmdType::SET){
     m_store->set(cmd.key, cmd.value.value_or(" "));
-    m_response = "Set " + cmd.value.value_or(" ") + " at key: " + cmd.key + '\n';
+    m_response = "\nVALUE SET KEY: " + cmd.key + "\n\n";
 
   } else if(cmd.type == CmdType::GET){
     auto value = m_store->get(cmd.key);
     if (value) {
-        m_response = *value + "\n";
+        m_response = "\n" + *value + "\n\n";
     } else {
-        m_response = "NOT_FOUND\n";
+        m_response = "\nNOT_FOUND\n\n";
     }
   } else if(cmd.type == CmdType::REMOVE){
-    m_response = "Deleted field at: " + cmd.key + '\n';
+    m_store->remove(cmd.key);
+    m_response = "\nREMOVED " + cmd.key + "\n\n";
 
   } else if(cmd.type == CmdType::UNKNOWN){
     m_response = "No such command. Try:\nGET [key]\nSET [key] [value]\nREMOVE [key]\n";

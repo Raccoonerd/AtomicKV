@@ -1,12 +1,15 @@
 #include "../include/Parser.hpp"
 #include <string_view>
 
-// GET key
-// SET key value with spaces
-// REMOVE key
-
 auto Parser::parse(std::string_view line) -> Command{
   Command cmd;
+
+  while(!line.empty() && 
+        (line.back() == '\n' 
+        || line.back() == '\r' 
+        || line.back() == ' ')){
+    line.remove_suffix(1);
+  }
 
   auto space_pos = line.find(' ');
 

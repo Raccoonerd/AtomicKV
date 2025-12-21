@@ -23,6 +23,7 @@ set(SOURCES
     src/Parser.cpp
     src/Logger.cpp
     src/Session.cpp
+    src/Server.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

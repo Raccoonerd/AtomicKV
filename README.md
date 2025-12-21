@@ -2,7 +2,7 @@
 
 **AtomicKV** is a high-performance, multithreaded key-value storage written in modern C++ (C++20). It is designed to handle multiple concurrent client connections efficently using asynchronous I/O and thread-safe architecture.
 
-## Features
+## 🚀 Features
 * **Asynchrounous I/O:** Built on **Boost.Asio** using the Procator pattern for non-blocking network operations.
 * **Multithreading:** Utilizes a thread pool to distribute workload across all avialable CPU cores.
 * **Thread-Safety:** Implements `std::shared_mutex` to allow multiple concurrent readers (GET) while ensuring exclusive access for writers (SET/REMOVE).
@@ -10,7 +10,7 @@
 * **Logging:** Integrated **Boost.Log** with rotation strategies and severity levels (Console & File output).
 * **Memory Management:** wide use of smart pointers (`std::shared_ptr`, `std::enable_shared_from_this`) for automatic resource management.
 
-## Tech Stack
+## 🛠️ Tech Stack
 * **Language:** C++20
 * **Build System:** CMake (3.15+)
 * **Libraries:**
@@ -18,14 +18,14 @@
     * Boost.Log (Logging)
     * Boost.Thread (Threading support)
 
-## Architecture
+## 🏗️ Architecture
 
 1. **Server:** Initializes the `io_context` and accepts incoming TCP connections (`acceptor`).
 2. **Session:** Represents a single client connection. It handles reading, writing and parsing data asynchrounously. Uses `shared_from_this` to keep the connection alive during async operations.
 3. **Parser:** A stateless component that converts raw byte streams into structured `Command` objects using `std::string_view`.
 4. **KVStore:** The core. A thread-safe wrapper around `std::unordered_map`.
 
-## Installation & Build
+## 📦 Installation & Build
 
 ### Requirements
 * C++ compiler supporting C++17/20 (GCC, Clang, MSVC)
@@ -48,7 +48,7 @@ cmake -G Ninja ..
 ninja
 ```
 
-## Usage
+## 💻 Usage
 
 Start the server (it will automatically detect avialable CPU cores and spawn threads):
 ```bash
@@ -80,7 +80,7 @@ REMOVE my_key
 REMOVED
 ```
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 AtomicKV/
@@ -100,11 +100,11 @@ AtomicKV/
     └── Session.cpp
 ```
 
-## Future Roadmap
+## 🔮 Future Roadmap
 * [ ] Rework structure
 * [ ] Solid storage (Save/Load from file).
 * [ ] Add configuration file for server.
 * [ ] Add more commands (eg. GET_LIST)
 
-## License
+## 📄 License
 This project is open-source and avialable under the MIT License.

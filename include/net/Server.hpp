@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Session.hpp"
-#include "KVStore.hpp"
+#include "../core/KVStore.hpp"
 #include <memory>
 
 class Server{

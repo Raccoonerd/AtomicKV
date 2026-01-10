@@ -1,6 +1,6 @@
 #include <boost/log/trivial.hpp>
 #include <utility>
-#include "../include/Server.hpp"
+#include "../../include/net/Server.hpp"
 
 Server::Server(boost::asio::io_context& io_context, short port, std::shared_ptr<KVStore> store)
   :m_acceptor(io_context, tcp::endpoint(tcp::v4(), port)),

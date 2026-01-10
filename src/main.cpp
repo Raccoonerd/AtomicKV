@@ -1,6 +1,6 @@
-#include "../include/Logger.hpp"
-#include "../include/Server.hpp"
-#include "../include/KVStore.hpp"
+#include "../include/core/Logger.hpp"
+#include "../include/net/Server.hpp"
+#include "../include/core/KVStore.hpp"
 #include <boost/log/trivial.hpp>
 #include <memory>
 #include <thread>

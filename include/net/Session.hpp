@@ -4,8 +4,8 @@
 #include <memory>
 #include <array>
 #include <utility>
-#include "KVStore.hpp"
-#include "Parser.hpp"
+#include "../core/KVStore.hpp"
+#include "../core/Parser.hpp"
 
 using boost::asio::ip::tcp;
 

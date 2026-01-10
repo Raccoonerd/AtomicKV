@@ -86,22 +86,26 @@ REMOVED
 AtomicKV/
 ├── CMakeLists.txt
 ├── include/
-│   ├── KVStore.hpp
-│   ├── Logger.hpp
-│   ├── Parser.hpp
-│   ├── Server.hpp
-│   └── Session.hpp
+│   ├── core/
+|   |   ├── KVStore.hpp
+│   |   ├── Logger.hpp
+│   |   ├── Parser.hpp
+|   └── net/
+│       ├── Server.hpp
+│       └── Session.hpp
 └── src/
-    ├── KVStore.cpp
-    ├── Logger.cpp
     ├── main.cpp
-    ├── Parser.cpp
-    ├── Server.cpp
-    └── Session.cpp
+    ├── core/
+    |   ├── KVStore.cpp
+    |   ├── Logger.cpp
+    |   └── Parser.cpp
+    └── net/
+        ├── Server.cpp
+        └── Session.cpp
 ```
 
 ## 🔮 Future Roadmap
-* [ ] Rework structure
+* [x] Rework structure
 * [ ] Solid storage (Save/Load from file).
 * [ ] Add configuration file for server.
 * [ ] Add more commands (eg. GET_LIST)
